@@ -7,9 +7,9 @@
 
 module.exports = {
 
-	title: 'When user enters smart group',
+	title: 'When user leaves smart group',
 
-	description: 'Triggers when a user in GoSquared enters a smart group.',
+	description: 'Triggers when a user in GoSquared leaves a smart group.',
 
 	// Input schema config
 	input: {
@@ -22,13 +22,14 @@ module.exports = {
 
 		value: {
 			type: 'string',
-			title: 'Smart Group ID',
+      title: 'Smart Group ID',
       description: 'You can find this in your GoSquared dashboard - it\'s the final part of the URL when you\'ve got a smart group open.',
       required: true
 		},
 
 		name: {
-			type: 'string'
+			type: 'string',
+			default: 'Tray webhook'
 		},
 
 
