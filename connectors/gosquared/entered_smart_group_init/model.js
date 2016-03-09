@@ -5,8 +5,6 @@ module.exports = {
 
 	url: '/account/v1/webhooks',
 
-	expects: 201,
-
 	data: {
 		name: '{{name}}',
 		url: '{{url}}',
