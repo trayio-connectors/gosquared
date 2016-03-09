@@ -1,0 +1,115 @@
+[
+  {
+    "name": "gosquared",
+    "title": "GoSquared",
+    "description": "Interact with the GoSquared tracking APIs.",
+    "version": "1.0",
+    "tags": [
+      "service"
+    ],
+    "icon": {
+      "type": "url",
+      "value": "http://images.tray.io.s3.amazonaws.com/static/icons/placeholder.png"
+    },
+    "messages": [
+      {
+        "name": "identify_user",
+        "title": "Identify user",
+        "description": "Track a user via tray into People Analytics.",
+        "input_schema": {
+          "type": "object",
+          "properties": {
+            "visitor_id": {
+              "type": "string",
+              "title": "Visitor id"
+            },
+            "id": {
+              "type": "string",
+              "title": "Id"
+            },
+            "email": {
+              "type": "string",
+              "title": "Email"
+            },
+            "name": {
+              "type": "string",
+              "title": "Name"
+            },
+            "first_name": {
+              "type": "string",
+              "title": "First name"
+            },
+            "last_name": {
+              "type": "string",
+              "title": "Last name"
+            },
+            "username": {
+              "type": "string",
+              "title": "Username"
+            },
+            "avatar": {
+              "type": "string",
+              "title": "Avatar"
+            },
+            "phone": {
+              "type": "string",
+              "title": "Phone"
+            },
+            "created_at": {
+              "type": "string",
+              "title": "Created at"
+            },
+            "company": {
+              "type": "string",
+              "title": "Company"
+            },
+            "size": {
+              "type": "string",
+              "title": "Size"
+            },
+            "industry": {
+              "type": "string",
+              "title": "Industry"
+            },
+            "position": {
+              "type": "string",
+              "title": "Position"
+            },
+            "custom": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "advanced": [],
+              "additionalProperties": true,
+              "title": "Custom"
+            }
+          },
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "required": [],
+          "advanced": [],
+          "additionalProperties": false
+        },
+        "output_schema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "properties": {
+            "success": {
+              "type": "boolean"
+            },
+            "sent": {
+              "type": "object",
+              "properties": {
+                "alias": {
+                  "type": "boolean"
+                },
+                "props": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+]
