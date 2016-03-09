@@ -1,0 +1,21 @@
+{
+    "success": true,
+    "details": {
+      "person_id": "123",
+      "event": {
+        "name": "Signed up"
+      },
+      "timestamps": {
+        "ms": 1457521183597,
+        "unix": 1457521183,
+        "custom": null
+      },
+      "visit_id": 301144647,
+      "referrer": {
+        "type": "direct",
+        "href": "",
+        "internal": 0
+      },
+      "ip_version": 0
+    }
+  }

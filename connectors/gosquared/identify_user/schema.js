@@ -13,12 +13,19 @@ module.exports = {
 	// Input schema config
 	input: {
 
-		visitor_id: {
-			type: 'string'
+		// visitor_id: {
+		// 	type: 'string'
+		// },
+
+		person_id: {
+			type: 'string',
+			required: true,
+			description: 'A unique ID for the person being tracked. This can be an ID for the user in your database, or another unique key such as an email address.'
 		},
 
 		id: {
-			type: 'string'
+			type: 'string',
+			description: 'Database ID for the user.'
 		},
 
 		email: {
@@ -50,32 +57,36 @@ module.exports = {
 		},
 
 		created_at: {
-			type: 'string'
+			type: 'string',
+			description: 'A valid ISO 8601 timestamp of when this user was created.'
 		},
 
 		company: {
-			type: 'string'
-		},
-
-		name: {
-			type: 'string'
-		},
-
-		size: {
-			type: 'string'
-		},
-
-		industry: {
-			type: 'string'
-		},
-
-		position: {
-			type: 'string'
+			type: 'object',
+			properties: {
+				company_name: {
+					type: 'string',
+					title: 'Name'
+				},
+				company_size: {
+					type: 'number',
+					title: 'Size'
+				},
+				company_industry: {
+					type: 'string',
+					title: 'Industry'
+				},
+				company_position: {
+					type: 'string',
+					title: 'Position'
+				},
+			}
 		},
 
 		custom: {
 			type: 'object',
-			additionalProperties: true
+			additionalProperties: true,
+			description: 'Any custom properties associated with this person.'
 		}
 
 	}
