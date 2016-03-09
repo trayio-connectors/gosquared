@@ -19,7 +19,7 @@ module.exports = {
   version: '1.0',
 
   // Tags attached to the connector
-  tags: ['service'],
+  tags: ['service', 'analytics'],
 
   // Icon of the connector.
   icon: {

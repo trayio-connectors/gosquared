@@ -5,7 +5,8 @@
     "description": "Interact with the GoSquared tracking APIs.",
     "version": "1.0",
     "tags": [
-      "service"
+      "service",
+      "analytics"
     ],
     "icon": {
       "type": "url",
@@ -13,12 +14,69 @@
     },
     "messages": [
       {
+        "name": "entered_smart_group_init",
+        "title": "When user enters smart group",
+        "description": "Triggers when a user in GoSquared enters a smart group.",
+        "input_schema": {
+          "type": "object",
+          "properties": {
+            "api_key": {
+              "type": "string",
+              "title": "Api key"
+            },
+            "site_token": {
+              "type": "string",
+              "title": "Site token"
+            },
+            "url": {
+              "type": "string",
+              "title": "Url"
+            },
+            "value": {
+              "type": "string",
+              "title": "Smart Group ID",
+              "description": "You can find this in your GoSquared dashboard - it's the final part of the URL when you've got a smart group open."
+            },
+            "name": {
+              "type": "string",
+              "title": "Name"
+            }
+          },
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "required": [
+            "api_key",
+            "site_token",
+            "url",
+            "value"
+          ],
+          "advanced": [
+            "api_key",
+            "site_token",
+            "url"
+          ],
+          "additionalProperties": false
+        },
+        "output_schema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "properties": {}
+        }
+      },
+      {
         "name": "identify_user",
         "title": "Identify user",
         "description": "Track a user via tray into People Analytics.",
         "input_schema": {
           "type": "object",
           "properties": {
+            "api_key": {
+              "type": "string",
+              "title": "Api key"
+            },
+            "site_token": {
+              "type": "string",
+              "title": "Site token"
+            },
             "person_id": {
               "type": "string",
               "description": "A unique ID for the person being tracked. This can be an ID for the user in your database, or another unique key such as an email address.",
@@ -99,9 +157,14 @@
           },
           "$schema": "http://json-schema.org/draft-04/schema#",
           "required": [
+            "api_key",
+            "site_token",
             "person_id"
           ],
-          "advanced": [],
+          "advanced": [
+            "api_key",
+            "site_token"
+          ],
           "additionalProperties": false
         },
         "output_schema": {
@@ -126,12 +189,69 @@
         }
       },
       {
+        "name": "left_smart_group_init",
+        "title": "When user leaves smart group",
+        "description": "Triggers when a user in GoSquared leaves a smart group.",
+        "input_schema": {
+          "type": "object",
+          "properties": {
+            "api_key": {
+              "type": "string",
+              "title": "Api key"
+            },
+            "site_token": {
+              "type": "string",
+              "title": "Site token"
+            },
+            "url": {
+              "type": "string",
+              "title": "Url"
+            },
+            "value": {
+              "type": "string",
+              "title": "Smart Group ID",
+              "description": "You can find this in your GoSquared dashboard - it's the final part of the URL when you've got a smart group open."
+            },
+            "name": {
+              "type": "string",
+              "title": "Name"
+            }
+          },
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "required": [
+            "api_key",
+            "site_token",
+            "url",
+            "value"
+          ],
+          "advanced": [
+            "api_key",
+            "site_token",
+            "url"
+          ],
+          "additionalProperties": false
+        },
+        "output_schema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "properties": {}
+        }
+      },
+      {
         "name": "track_event",
         "title": "Identify user",
         "description": "Track a user via tray into People Analytics.",
         "input_schema": {
           "type": "object",
           "properties": {
+            "api_key": {
+              "type": "string",
+              "title": "Api key"
+            },
+            "site_token": {
+              "type": "string",
+              "title": "Site token"
+            },
             "person_id": {
               "type": "string",
               "description": "A unique ID for the person being tracked. This can be an ID for the user in your database, or another unique key such as an email address.",
@@ -156,10 +276,15 @@
           },
           "$schema": "http://json-schema.org/draft-04/schema#",
           "required": [
+            "api_key",
+            "site_token",
             "person_id",
             "event_name"
           ],
-          "advanced": [],
+          "advanced": [
+            "api_key",
+            "site_token"
+          ],
           "additionalProperties": false
         },
         "output_schema": {

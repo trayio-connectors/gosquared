@@ -3,7 +3,7 @@
   "description": "Interact with the GoSquared tracking APIs.",
   "version": "0.0.1",
   "dependencies": {
-    "@trayio/falafel": "^1.0.9"
+    "@trayio/falafel": "^1.0.10"
   },
   "scripts": {
     "start": "node main.js",
