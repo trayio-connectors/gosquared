@@ -312,11 +312,253 @@
         "output_schema": {
           "$schema": "http://json-schema.org/draft-04/schema#",
           "type": "object",
-          "properties": {}
+          "properties": {
+            "group": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            },
+            "boundary": {
+              "type": "string"
+            },
+            "person": {
+              "type": "object",
+              "properties": {
+                "smart_groups": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "last": {
+                  "type": "object",
+                  "properties": {
+                    "language": {
+                      "type": "string"
+                    },
+                    "ip": {
+                      "type": "string"
+                    },
+                    "organisation": {
+                      "type": "string"
+                    },
+                    "visit": {
+                      "type": "string"
+                    },
+                    "exit": {
+                      "type": "string"
+                    },
+                    "location": {
+                      "type": "object",
+                      "properties": {
+                        "city": {
+                          "type": "string"
+                        },
+                        "country": {
+                          "type": "object",
+                          "properties": {
+                            "code": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "timezone_offset": {
+                          "type": "number"
+                        },
+                        "coordinates": {
+                          "type": "array",
+                          "items": {
+                            "type": "number"
+                          }
+                        },
+                        "region": {
+                          "type": "string"
+                        },
+                        "continent": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "device": {
+                      "type": "string"
+                    },
+                    "seen": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "description": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "avatar_secure": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "type": "string"
+                },
+                "online": {
+                  "type": "boolean"
+                },
+                "totals": {
+                  "type": "object",
+                  "properties": {
+                    "time_on_site": {
+                      "type": "number"
+                    },
+                    "pageviews": {
+                      "type": "number"
+                    },
+                    "engaged_time": {
+                      "type": "number"
+                    },
+                    "visits": {
+                      "type": "number"
+                    },
+                    "stitches": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "avatar": {
+                  "type": "string"
+                },
+                "social": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "number"
+                    },
+                    "requested": {
+                      "type": "string"
+                    },
+                    "updated": {
+                      "type": "string"
+                    },
+                    "klout": {
+                      "type": "object",
+                      "properties": {
+                        "score": {
+                          "type": "number"
+                        }
+                      }
+                    },
+                    "profiles": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "username": {
+                            "type": "string"
+                          },
+                          "bio": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "photo": {
+                            "type": "string"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "string"
+                          },
+                          "following": {
+                            "type": "number"
+                          },
+                          "followers": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "username",
+                          "bio",
+                          "url",
+                          "type",
+                          "name",
+                          "photo",
+                          "id",
+                          "following",
+                          "followers"
+                        ]
+                      }
+                    }
+                  }
+                },
+                "events": {
+                  "type": "object",
+                  "properties": {
+                    "last": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "company": {
+                  "type": "object",
+                  "properties": {
+                    "position": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "id": {
+                  "type": "string"
+                },
+                "first": {
+                  "type": "object",
+                  "properties": {
+                    "seen": {
+                      "type": "string"
+                    },
+                    "referrer": {
+                      "type": "object",
+                      "properties": {
+                        "domain": {
+                          "type": "string"
+                        },
+                        "href": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       },
       {
-        "name": "left_smart_group_init",
+        "name": "exited_smart_group_init",
         "title": "When user leaves smart group",
         "description": "Triggers when a user in GoSquared leaves a smart group.",
         "input_schema": {
@@ -362,7 +604,249 @@
         "output_schema": {
           "$schema": "http://json-schema.org/draft-04/schema#",
           "type": "object",
-          "properties": {}
+          "properties": {
+            "group": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            },
+            "boundary": {
+              "type": "string"
+            },
+            "person": {
+              "type": "object",
+              "properties": {
+                "smart_groups": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "last": {
+                  "type": "object",
+                  "properties": {
+                    "language": {
+                      "type": "string"
+                    },
+                    "ip": {
+                      "type": "string"
+                    },
+                    "organisation": {
+                      "type": "string"
+                    },
+                    "visit": {
+                      "type": "string"
+                    },
+                    "exit": {
+                      "type": "string"
+                    },
+                    "location": {
+                      "type": "object",
+                      "properties": {
+                        "city": {
+                          "type": "string"
+                        },
+                        "country": {
+                          "type": "object",
+                          "properties": {
+                            "code": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "timezone_offset": {
+                          "type": "number"
+                        },
+                        "coordinates": {
+                          "type": "array",
+                          "items": {
+                            "type": "number"
+                          }
+                        },
+                        "region": {
+                          "type": "string"
+                        },
+                        "continent": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "device": {
+                      "type": "string"
+                    },
+                    "seen": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "description": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "avatar_secure": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "type": "string"
+                },
+                "online": {
+                  "type": "boolean"
+                },
+                "totals": {
+                  "type": "object",
+                  "properties": {
+                    "time_on_site": {
+                      "type": "number"
+                    },
+                    "pageviews": {
+                      "type": "number"
+                    },
+                    "engaged_time": {
+                      "type": "number"
+                    },
+                    "visits": {
+                      "type": "number"
+                    },
+                    "stitches": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "avatar": {
+                  "type": "string"
+                },
+                "social": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "number"
+                    },
+                    "requested": {
+                      "type": "string"
+                    },
+                    "updated": {
+                      "type": "string"
+                    },
+                    "klout": {
+                      "type": "object",
+                      "properties": {
+                        "score": {
+                          "type": "number"
+                        }
+                      }
+                    },
+                    "profiles": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "username": {
+                            "type": "string"
+                          },
+                          "bio": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "photo": {
+                            "type": "string"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "string"
+                          },
+                          "following": {
+                            "type": "number"
+                          },
+                          "followers": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "username",
+                          "bio",
+                          "url",
+                          "type",
+                          "name",
+                          "photo",
+                          "id",
+                          "following",
+                          "followers"
+                        ]
+                      }
+                    }
+                  }
+                },
+                "events": {
+                  "type": "object",
+                  "properties": {
+                    "last": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "company": {
+                  "type": "object",
+                  "properties": {
+                    "position": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "id": {
+                  "type": "string"
+                },
+                "first": {
+                  "type": "object",
+                  "properties": {
+                    "seen": {
+                      "type": "string"
+                    },
+                    "referrer": {
+                      "type": "object",
+                      "properties": {
+                        "domain": {
+                          "type": "string"
+                        },
+                        "href": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     ]

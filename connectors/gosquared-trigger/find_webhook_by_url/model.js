@@ -6,7 +6,9 @@ module.exports = function (params) {
 
 		var webhook;
 
-		falafel.gosquared.listWebhooks(params)
+		console.log(falafel);
+
+		falafel.gosquaredTrigger.listWebhooks(params)
 
 		.then(function (result) {
 			return _.find(result.list, function (hook) {
@@ -17,7 +19,7 @@ module.exports = function (params) {
 		.then(function (result) {
 			webhook = result;
 			if (webhook) {
-				return falafel.gosquared.findWebhookTriggers(_.extend({
+				return falafel.gosquaredTrigger.findWebhookTriggers(_.extend({
 					webhook_id: webhook.id
 				}, _.pick(params, ['api_key', 'site_token'])));
 			}
