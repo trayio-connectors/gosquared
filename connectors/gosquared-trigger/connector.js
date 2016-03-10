@@ -24,7 +24,7 @@ module.exports = {
   // Icon of the connector.
   icon: {
   	type: 'url',
-  	value: 'http://images.tray.io.s3.amazonaws.com/static/icons/placeholder.png'
+  	value: 'https://s3.amazonaws.com/images.tray.io/static/icons/gosquared.png'
   }
 
 };
