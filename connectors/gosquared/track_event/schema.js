@@ -6,9 +6,9 @@
 
 module.exports = {
 
-	title: 'Identify user',
+	title: 'Track event',
 
-	description: 'Track a user via tray into People Analytics.',
+	description: 'Track a event via tray.',
 
 	// Input schema config
 	input: {

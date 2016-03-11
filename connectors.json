@@ -141,8 +141,8 @@
       },
       {
         "name": "track_event",
-        "title": "Identify user",
-        "description": "Track a user via tray into People Analytics.",
+        "title": "Track event",
+        "description": "Track a event via tray.",
         "input_schema": {
           "type": "object",
           "properties": {
