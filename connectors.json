@@ -22,10 +22,12 @@
           "properties": {
             "api_key": {
               "type": "string",
+              "default_jsonpath": "$.auth.api_key",
               "title": "Api key"
             },
             "site_token": {
               "type": "string",
+              "default_jsonpath": "$.auth.site_token",
               "title": "Site token"
             },
             "person_id": {
@@ -148,10 +150,12 @@
           "properties": {
             "api_key": {
               "type": "string",
+              "default_jsonpath": "$.auth.api_key",
               "title": "Api key"
             },
             "site_token": {
               "type": "string",
+              "default_jsonpath": "$.auth.site_token",
               "title": "Site token"
             },
             "person_id": {
@@ -274,14 +278,17 @@
           "properties": {
             "api_key": {
               "type": "string",
+              "default_jsonpath": "$.auth.api_key",
               "title": "Api key"
             },
             "site_token": {
               "type": "string",
+              "default_jsonpath": "$.auth.site_token",
               "title": "Site token"
             },
             "url": {
               "type": "string",
+              "default_jsonpath": "$.env.public_url",
               "title": "Url"
             },
             "value": {
@@ -566,14 +573,17 @@
           "properties": {
             "api_key": {
               "type": "string",
+              "default_jsonpath": "$.auth.api_key",
               "title": "Api key"
             },
             "site_token": {
               "type": "string",
+              "default_jsonpath": "$.auth.site_token",
               "title": "Site token"
             },
             "url": {
               "type": "string",
+              "default_jsonpath": "$.env.public_url",
               "title": "Url"
             },
             "value": {

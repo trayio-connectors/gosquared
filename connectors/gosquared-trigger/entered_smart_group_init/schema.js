@@ -17,7 +17,8 @@ module.exports = {
 		url: {
 			type: 'string',
 			required: true,
-			advanced: true
+			advanced: true,
+			defaultJsonPath: '$.env.public_url'
 		},
 
 		value: {
